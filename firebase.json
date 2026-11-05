@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "public",
+    "predeploy": ["node build.mjs"],
+    "ignore": ["firebase.json", "**/.*"],
+    "cleanUrls": true,
+    "headers": [
+      { "source": "**/*.@(css|js|png|jpg|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }] }
+    ]
+  }
+}
