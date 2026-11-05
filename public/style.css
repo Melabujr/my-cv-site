@@ -221,14 +221,22 @@ h1 { font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em
   .arcade, .arcade__blink { animation: none; }
 }
 
-/* Logócsempék – egységes: fehér négyzet, a jel középen */
-.mark { width: 40px; height: 40px; border-radius: 10px; background: #fff; border: 1px solid var(--line); overflow: hidden; }
+/* Logócsempék – egységes: azonos méret, keret, a jel középen. Sötét módban sötét csempe + világos logóváltozat. */
+.mark { width: 44px; height: 44px; border-radius: 10px; background: #fff; border: 1px solid var(--line); overflow: hidden; }
+.mark--wide { width: 88px; }
 .mark img { width: 100%; height: 100%; object-fit: contain; }
+.mark .lg-dark { display: none; }
 .mark--icon { background: var(--tb); border-color: transparent; color: var(--t); }
 .mark--icon .ic { width: 18px; height: 18px; }
-:root[data-theme="dark"] .mark:not(.mark--icon) { background: #f3f2ef; border-color: transparent; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mark:not(.mark--icon) { background: #f3f2ef; border-color: transparent; } }
-.xp ul { margin-left: 54px; }
+:root[data-theme="dark"] .mark:not(.mark--icon) { background: var(--chip); }
+:root[data-theme="dark"] .mark .lg-light { display: none; }
+:root[data-theme="dark"] .mark .lg-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mark:not(.mark--icon) { background: var(--chip); }
+  :root:not([data-theme="light"]) .mark .lg-light { display: none; }
+  :root:not([data-theme="light"]) .mark .lg-dark { display: block; }
+}
+.xp ul { margin-left: 58px; }
 
 /* Linkek a kártyákon */
 .xp__id a, .edu h3 a { color: inherit; text-decoration: none; background-image: linear-gradient(var(--line), var(--line)); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; }

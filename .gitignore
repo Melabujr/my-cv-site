@@ -3,3 +3,4 @@ node_modules/
 .firebase/
 .claude/
 *.log
+firebase-debug.log
