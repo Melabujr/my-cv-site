@@ -220,3 +220,16 @@ h1 { font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em
 @media (prefers-reduced-motion: reduce) {
   .arcade, .arcade__blink { animation: none; }
 }
+
+/* Logócsempék – egységes: fehér négyzet, a jel középen */
+.mark { width: 40px; height: 40px; border-radius: 10px; background: #fff; border: 1px solid var(--line); overflow: hidden; }
+.mark img { width: 100%; height: 100%; object-fit: contain; }
+.mark--icon { background: var(--tb); border-color: transparent; color: var(--t); }
+.mark--icon .ic { width: 18px; height: 18px; }
+:root[data-theme="dark"] .mark:not(.mark--icon) { background: #f3f2ef; border-color: transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mark:not(.mark--icon) { background: #f3f2ef; border-color: transparent; } }
+.xp ul { margin-left: 54px; }
+
+/* Linkek a kártyákon */
+.xp__id a, .edu h3 a { color: inherit; text-decoration: none; background-image: linear-gradient(var(--line), var(--line)); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; }
+.xp__id a:hover, .edu h3 a:hover { color: var(--accent); background-image: linear-gradient(currentColor, currentColor); }
